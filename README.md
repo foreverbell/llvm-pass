@@ -1,12 +1,14 @@
 # llvm-pass
 
-Exploring LLVM by 3 trivial LLVM passes.
+Exploring LLVM by writing some trivial LLVM passes.
 
 This code is derived from UCSD CSE231 (Advanced Compilers).
 
-* CountStaticInstructions: Count the number of each IR instructions statically.
+Three simple LLVM passes have implemented.
 
-* CountDynamicInstructions: Count the number of each IR instructions to execute dynamically by
+* CountStaticInstructions: Counting the number of each IR instructions statically.
+
+* CountDynamicInstructions: Counting the number of each IR instructions to execute dynamically by
   hijacking (injecting) some code before each BasicBlock. See `lib/lib_cdi.cc` for injected code.
 
 * BranchBias: Profiling bias for each branch, i.e. how many conditionals are evaluated to true?
@@ -24,7 +26,7 @@ Tested with LLVM 3.9 and 4.0.
 
 ## IR Before / After
 
-Demostrate how CountDynamicInstructions pass works on `tests/test1.cc`.
+Demonstrate how `CountDynamicInstructions` pass works on `tests/test1.cc`.
 
 ### Before  (`test1.ll`)
 
