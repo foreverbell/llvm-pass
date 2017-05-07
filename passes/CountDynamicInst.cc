@@ -45,7 +45,8 @@ struct CountDIPass : public FunctionPass {
           Type::getVoidTy(ctx),
           nullptr));
 
-    for (Function::iterator blk_it = F.begin(), blk_e = F.end(); ; ) {
+    for (Function::iterator blk_it = F.begin(), blk_e = F.end();
+         blk_it != blk_e; ++blk_it) {
       std::map<uint32_t, uint32_t> inst_cnt;
 
       // Count instruction statistics in this basic block.
@@ -78,9 +79,16 @@ struct CountDIPass : public FunctionPass {
       Value* vals_0 = builder.CreateInBoundsGEP(
           g_array_vals, llvm::ArrayRef<llvm::Value*>({getInt32(ctx, 0), getInt32(ctx, 0)}));
       builder.CreateCall(updateF, {const_n, keys_0, vals_0});
+    }
 
-      if (++blk_it == blk_e) {
-        // Build function call to printInstrInfo at the end of this function.
+    for (inst_iterator inst_it = inst_begin(F), inst_e = inst_end(F);
+       inst_it != inst_e; ++inst_it) {
+      ReturnInst* ret_inst = dyn_cast<ReturnInst>(&*inst_it);
+
+      if (ret_inst != nullptr) {
+        IRBuilder<> builder(ret_inst);
+
+        // Build function call to printInstrInfo before every ret.
         builder.CreateCall(printF, {});
         break;
       }
