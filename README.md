@@ -6,12 +6,12 @@ This code is derived from UCSD CSE231 (Advanced Compilers).
 
 Three simple LLVM passes have implemented.
 
-* CountStaticInstructions: Counting the number of each IR instructions statically.
+* CountStaticInst: Counting the number of each IR instructions statically.
 
-* CountDynamicInstructions: Counting the number of each IR instructions to execute dynamically by
+* CountDynamicInst: Counting the number of each IR instructions to execute dynamically by
   hijacking (injecting) some code before each BasicBlock. See `lib/lib_cdi.cc` for injected code.
 
-* BranchBias: Profiling bias for each branch, i.e. how many conditionals are evaluated to true?
+* ProfileBranchBias: Profiling bias for each branch, i.e. how many conditionals are evaluated to true?
   See `lib/lib_bb.cc` for injected code.
 
 ## Testing
@@ -26,7 +26,7 @@ Tested with LLVM 3.9 and 4.0.
 
 ## IR Before / After
 
-Demonstrate how `CountDynamicInstructions` pass works on `tests/test1.cc`.
+Demonstrate how `CountDynamicInst` pass works on `tests/test1.cc`.
 
 ### Before  (`test1.ll`)
 

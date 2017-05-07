@@ -1,7 +1,7 @@
 add_llvm_loadable_module( LLVMPass
-  CountStaticInstructions.cc
-  CountDynamicInstructions.cc
-  BranchBias.cc
+  CountStaticInst.cc
+  CountDynamicInst.cc
+  ProfileBranchBias.cc
 
   PLUGIN_TOOL
   opt
