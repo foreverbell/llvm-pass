@@ -4,7 +4,7 @@ Exploring LLVM by writing some trivial LLVM passes.
 
 This code is derived from UCSD CSE231 (Advanced Compilers).
 
-Three simple LLVM passes have been implemented.
+5 simple LLVM passes have been implemented.
 
 * CountStaticInst: Counting the number of each IR instructions statically.
 
@@ -13,6 +13,10 @@ Three simple LLVM passes have been implemented.
 
 * ProfileBranchBias: Profiling bias for each branch, i.e. how many conditionals are evaluated to true?
   See `lib/lib_bb.cc` for injected code.
+
+* ReachingDefinitionAnalysis.
+
+* LivenessAnalysis.
 
 ## Testing
 
