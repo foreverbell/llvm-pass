@@ -4,6 +4,7 @@ add_llvm_loadable_module( LLVMPass
   ProfileBranchBias.cc
   ReachingDefinitionAnalysis.cc
   LivenessAnalysis.cc
+  PointerAnalysis.cc
 
   PLUGIN_TOOL
   opt

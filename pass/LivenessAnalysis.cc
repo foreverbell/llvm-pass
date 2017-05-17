@@ -204,6 +204,6 @@ struct LivenessAnalysisPass : public FunctionPass {
 
 char LivenessAnalysisPass::ID = 0;
 static RegisterPass<LivenessAnalysisPass> X(
-    "cse231-liveness", "Liveness analysis pass",
+    "liveness", "Liveness analysis pass",
     false /* Only looks at CFG */,
     false /* Analysis Pass */);

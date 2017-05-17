@@ -4,7 +4,7 @@ Exploring LLVM by writing some trivial LLVM passes.
 
 This code is derived from UCSD CSE231 (Advanced Compilers).
 
-5 simple LLVM passes have been implemented.
+6 simple LLVM passes have been implemented.
 
 * CountStaticInst: Counting the number of each IR instructions statically.
 
@@ -17,6 +17,8 @@ This code is derived from UCSD CSE231 (Advanced Compilers).
 * ReachingDefinitionAnalysis.
 
 * LivenessAnalysis.
+
+* PointerAnalysis.
 
 ## Testing
 
